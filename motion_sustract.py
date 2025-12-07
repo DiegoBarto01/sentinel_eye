@@ -1,11 +1,7 @@
 import cv2
 import time
 
-#VIDEO_PATH = r"F:\Diego\Descargas\delirio\video_2.mp4"
-#VIDEO_PATH = r"F:\Diego\Descargas\delirio\video2_corto.mp4"
-VIDEO_PATH = r"F:\Diego\Descargas\delirio\24 (2025-05-12 00'00'34 - 2025-05-12 00'03'07).avi"
-#VIDEO_PATH = r"F:\Diego\Descargas\delirio\24 (2025-05-12 08'22'13 - 2025-05-12 08'22'53).avi"
-#VIDEO_PATH = r".\video_1.mp4"
+VIDEO_PATH = r"./video.mp4" #Ajustar a tu path para probar independientemente
 
 #Modulo 3  Detección de Movimiento Optimizada
 '''
@@ -22,13 +18,10 @@ perder precisión crítica.
 '''
 
 # --- CONFIGURACIÓN GLOBAL ---
-# Se recomienda que estos parámetros se pasen a la función principal, pero los 
-# mantenemos aquí como valores por defecto si no se especifican.
 FRAME_SKIP = 1           
 THRESHOLD_AREA = 800     
 
 # --- Inicialización de Objetos Permanentes (MOG2 y CLAHE) ---
-# Estos objetos deben inicializarse una sola vez fuera del bucle de frames.
 FGBG_MODEL = cv2.createBackgroundSubtractorMOG2(history=500, varThreshold=200, detectShadows=True)
 CLAHE_MODEL = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8, 8))
 
@@ -45,7 +38,7 @@ def detectar_movimiento_frame(frame, fgbg_model, clahe_model, threshold_area):
     :param threshold_area: El área mínima del contorno para ser considerada movimiento.
     :return: El frame original con Bounding Boxes dibujadas.
     """
-    # Copia del frame original para el output (sin afectar calidad)
+    # Copia del frame original para el output
     original_frame = frame.copy() 
 
     # --- Pre-procesamiento para Detección Mejorada (Niebla/Oscuridad/Robustez a Luz) ---
@@ -87,6 +80,7 @@ def detectar_movimiento_frame(frame, fgbg_model, clahe_model, threshold_area):
 
 # --------------------------------------------------------------------------------
 
+#Función para probar módulo independientemente
 def correr_deteccion_video(video_path, fgbg_model, clahe_model, frame_skip=1, threshold_area=800):
     """
     Corre el código principal de detección de movimiento, gestionando la captura de video, 
@@ -160,4 +154,5 @@ def correr_deteccion_video(video_path, fgbg_model, clahe_model, frame_skip=1, th
 #        clahe_model=CLAHE_MODEL, 
 #        frame_skip=1, # Puedes cambiar el valor de salto de frames aquí
 #        threshold_area=800  # Puedes cambiar el área mínima aquí
+
 #    )
