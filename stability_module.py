@@ -179,11 +179,7 @@ def analyze_video_stability(video_path, initial_roi):
 
     return shifts
 
-#video_path = r"F:\Diego\Descargas\delirio\video_2.mp4"
-#video_path = r"F:\Diego\Descargas\delirio\video2_corto.mp4"
-##video_path = r"F:\Diego\Descargas\delirio\24 (2025-05-12 00'00'34 - 2025-05-12 00'03'07).avi"
-##video_path = r"F:\Diego\Descargas\delirio\24 (2025-05-12 08'22'13 - 2025-05-12 08'22'53).avi"
-##video_path = r"F:\Diego\Descargas\delirio\video_1.mp4"
+#video_path = r".\video.mp4" #Ajustar el path para probar módulo
 #
 #cap = cv2.VideoCapture(video_path)
 #ret, frame = cap.read()
@@ -205,4 +201,5 @@ def analyze_video_stability(video_path, initial_roi):
 #)
 #
 #print("ROI inicial centrado:", initial_roi)
+
 #shifts = analyze_video_stability(video_path, initial_roi)
