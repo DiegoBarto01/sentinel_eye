@@ -1,8 +1,4 @@
 import numpy as np
-import matplotlib.pyplot as plt
-import os
-import glob
-import zipfile
 import cv2
 
 #Modulo 1 Diagnostico de imagenes
@@ -133,9 +129,6 @@ def run_qc_video(video_path, threshold=60):
 
 
 # Ejecución
-#video_path = r"F:\Diego\Descargas\delirio\video_2.mp4"
-#video_path = r"F:\Diego\Descargas\delirio\video2_corto.mp4"
-#video_path = r"F:\Diego\Descargas\delirio\24 (2025-05-12 00'00'34 - 2025-05-12 00'03'07).avi"
-#video_path = r"F:\Diego\Descargas\delirio\24 (2025-05-12 08'22'13 - 2025-05-12 08'22'53).avi"
-#video_path = r"F:\Diego\Descargas\delirio\video_1.mp4"
+#video_path = r".\video.mp4" #Ajustar a tu path para probar módulo
+
 #log = run_qc_video(video_path, 60)
