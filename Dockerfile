@@ -16,4 +16,5 @@ COPY . /app
 
 RUN mkdir -p /app/input_videos /app/outputs
 
+#Ajustar video de entrada para aplicar módulos y nombre del archivo de salida
 CMD ["python", "main.py", "--video", "/app/input_videos/video_niebla_dia.mp4", "--headless", "--out", "/app/outputs/output_result_dayfog.mp4"]
