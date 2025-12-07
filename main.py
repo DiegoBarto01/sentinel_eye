@@ -8,8 +8,7 @@ from stability_module import process_frame_stability
 from motion_sustract import detectar_movimiento_frame
 
 # --- CONFIGURACIÓN GLOBAL Y PARÁMETROS ---
-# Valores por defecto (se pueden sobrescribir por CLI)
-DEFAULT_VIDEO = r"./input_videos/video2_corto.mp4"
+DEFAULT_VIDEO = r"./video.mp4"
 FRAME_SKIP = 1
 MOVEMENT_THRESHOLD_AREA = 800 
 QC_THRESHOLD = 60
@@ -131,3 +130,4 @@ if __name__ == "__main__":
     )
     if not success:
         exit(1)
+
